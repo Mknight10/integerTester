@@ -1,0 +1,178 @@
+//MyInteger class. Created by Matthew Knight 1/15/21
+//Integer class for basic math functions
+
+
+
+public class MyInteger {
+  //instance variables
+  int value = 0;
+
+  //constructor that takes an int parameter
+  public MyInteger (int val) {
+    value = val;
+  }
+  //getter method
+  public int getValue () {
+    return value;
+  }
+
+
+  //the isEven methods
+  public boolean isEven (){
+    if (this.value % 2 == 0){
+      return true;
+    }
+    return false;
+
+  }
+
+  public static boolean isEven (int val){
+    if (val % 2 == 0){
+      return true;
+    }
+    return false;
+
+  }
+
+  public static boolean isEven (MyInteger a){
+    if (a.value % 2 == 0){
+      return true;
+    }
+    return false;
+
+  }
+
+  //THs isOdd methods
+
+  public boolean isOdd (){
+
+    if (this.value % 2 != 0){
+      return true;
+    }
+
+    return false;
+  }
+  public static boolean isOdd (int val){
+
+    if (val % 2 != 0){
+      return true;
+    }
+
+    return false;
+  }
+
+  public static boolean isOdd (MyInteger a){
+
+    if (a.value % 2 != 0){
+      return true;
+    }
+
+    return false;
+  }
+
+//The isPrime methods
+
+  public boolean isPrime(){
+    //primes have ot be positive
+    if (this.value <= 0 ){
+      return false;
+    }
+    boolean flag = false;
+
+    //checks every int up to half of the value to determine if prime
+    for (int i = 2; i <= this.value/2; i++){
+      if (this.value % i == 0){
+        flag = true;
+        break;
+      }
+    }
+
+    if (flag == true){
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
+  public static boolean isPrime(int val){
+    if (val <= 0 ){
+      return false;
+    }
+
+    boolean flag = false;
+
+    for (int i = 2; i <= val/2; i++){
+      if (val % i == 0){
+        flag = true;
+        break;
+      }
+    }
+
+    if (flag == true){
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
+  public static boolean isPrime(MyInteger a){
+    if (a.value < 0 ) {
+      return false;
+    }
+
+    boolean flag = false;
+
+    for (int i = 2; i <= a.value/2; i++){
+      if (a.value % i == 0){
+        flag = true;
+        break;
+      }
+    }
+
+    if (flag == true){
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
+//The equals methods
+  public boolean eqauls (int val){
+    //Integer holders
+    Integer value = new Integer(this.value);
+    Integer val2 = new Integer(val);
+
+    if (value.equals(val2)){
+      return true;
+    }
+
+    return false;
+  }
+
+  public boolean equals (MyInteger a){
+    if (this.value == a.value){
+      return true;
+    }
+
+    return false;
+  }
+
+
+  public static int parseInt(char[] a){
+    String holder = new String (a);
+    int value = Integer.parseInt(holder);
+    return value;
+
+  }
+
+
+  public static int parseInt(String a){
+    int value = Integer.parseInt(a);
+    return value;
+
+  }
+
+}
